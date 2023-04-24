@@ -1,0 +1,17 @@
+To check path- pwd
+To check contend of folder- ls
+create directory- mkdir
+enter into the directory- cd directoryname
+moving out the directory- cd ..
+deleteting directory- rmdir directory path(empty directory)
+deleteting directory- rm -rf directory path(non-empty directory)
+creating file inside directory- vi filename
+editing in side file- type i(insert will come)
+save file- esc:wq!
+not save file- esc:q!
+check content of file- cat filename
+moving to any directory- cd ../
+copy directory to another directory- cp -R <sourcedir> <destdir>
+copy file from one directory to anoter cp -R <source directorypath> <destdirectorypath>
+copy one file one to other directory and rename it cp <source directory path> ../<destination directory path>
+move one file to onother directory and rename it mv ~<source directory path>  ../<Destination path>
