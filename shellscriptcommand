@@ -12,6 +12,6 @@ not save file- esc:q!
 check content of file- cat filename
 moving to any directory- cd ../
 copy directory to another directory- cp -R <sourcedir> <destdir>
-copy file from one directory to anoter cp -R <source directorypath> <destdirectorypath>
+copy file from one directory to another cp -R <source directorypath> <destdirectorypath>
 copy one file one to other directory and rename it cp <source directory path> ../<destination directory path>
-move one file to onother directory and rename it mv ~<source directory path>  ../<Destination path>
+move one file to another directory and rename it mv ~<source directory path>  ../<Destination path>
