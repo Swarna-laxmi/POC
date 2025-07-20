@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Make advanced script executable
-        run: chmod +x ./advanced-hello.sh
+        run: chmod +x ./SpringbootProj/advanced-hello.sh
 
       - name: Run advanced hello script
-        run: ./advanced-hello.sh --name "GitHub Runner"
+        run: ./SpringbootProj/advanced-hello.sh --name "GitHub Runner"
