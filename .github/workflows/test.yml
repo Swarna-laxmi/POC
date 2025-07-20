@@ -14,9 +14,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Make script executable
-        run: chmod +x ./SpringbootProj/hello.sh
+      - name: Make advanced script executable
+        run: chmod +x ./advanced-hello.sh
 
-
-      - name: Run shell script
-        run: ./SpringbootProj/hello.sh
+      - name: Run advanced hello script
+        run: ./advanced-hello.sh --name "GitHub Runner"
