@@ -3,7 +3,8 @@ name: Run Shell Script
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main
+  workflow_dispatch:
 
 jobs:
   run-script:
@@ -13,5 +14,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Make script executable
+        run: chmod +x ./SpringbootProj/hello.sh
+
+
       - name: Run shell script
-        run: ./hello.sh
+        run: ./SpringbootProj/hello.sh
