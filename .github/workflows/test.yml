@@ -31,11 +31,5 @@ jobs:
           cache: maven
 
 
-      - name: Build and test
-        run: mvn -B clean package
-          - uses: actions/upload-artifact@v3
-             with:
-                  name: my-app-artifact
-                  ath: target/*.jar
 
           
