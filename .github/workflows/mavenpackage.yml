@@ -4,8 +4,18 @@
 name: Maven Package
 
 on:
-  release:
-    types: [created]
+  on:
+    workflow_dispatch:
+      inputs:
+        environment:
+          description: 'Select environment'
+          required: true
+          type: choice
+          options:
+            - development
+            - staging
+            - production
+          default: development
 
 jobs:
   build:
