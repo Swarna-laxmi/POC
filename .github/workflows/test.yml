@@ -1,31 +1,17 @@
-name: Print Python File
+name: Run Shell Script
 
 on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Select environment'
-        required: true
-        type: choice
-        options:
-          - development
-          - staging
-          - production
-        default: development
+  push:
+    branches:
+      - main  # or your default branch
 
 jobs:
-  print-python-file:
+  run-script:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print selected environment
-        run: |
-          echo "Environment selected: ${{ github.event.inputs.environment }}"
-
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Print contents of test.py
-        run: |
-          echo "--- test.py content ---"
-          cat SpringbootProj/test.py
+      - name: Run shell script
+        run: ./hello.sh
