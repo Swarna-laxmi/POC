@@ -1,21 +1,27 @@
-name: Run Shell Script
+name: Deploy to Kubernetes
 
 on:
   push:
-    branches:
-      - main
-  workflow_dispatch:
+    branches: [ main ]
 
 jobs:
-  run-script:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Make advanced script executable
-        run: chmod +x ./SpringbootProj/advanced-hello.sh
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'latest'
 
-      - name: Run advanced hello script
-        run: ./SpringbootProj/advanced-hello.sh --name "GitHub Runner"
+      - name: Configure kubeconfig
+        run: |
+          mkdir -p ~/.kube
+          echo "${{ secrets.KUBECONFIG_DATA }}" | base64 -d > ~/.kube/config
+
+      - name: Apply Kubernetes Manifests
+        run: |
+          kubectl apply -f k8s/
